@@ -1,0 +1,21 @@
+#include <string>
+#include <vector>
+#include <iostream>
+
+using namespace std;
+
+int solution(vector<string> order) {
+    int answer = 0;
+    int lat = 0;
+    int amer = 0;
+    
+    for (int i = 0; i < order.size(); i++){
+        if (order[i].find("latte") != string::npos)
+            lat += 1;
+        else
+            amer += 1;
+    }
+    
+    answer = lat * 5000 + amer * 4500;
+    return answer;
+}
